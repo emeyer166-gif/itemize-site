@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Itemize Terms of Service</title>
+<meta name="description" content="The terms of service for Itemize, the home inventory app.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FFFFFF;
+    --surface: #F6F7FB;
+    --ink: #15171C;
+    --subtext: #737985;
+    --border: #ECEEF1;
+    --accent: #2563EB;
+    --accent-ink: #FFFFFF;
+    --accent-soft: #EAF1FE;
+    --tan: #A0957D;
+    --tan-soft: #F3EFE8;
+    --font-display: 'Manrope', system-ui, sans-serif;
+    --font-body: 'Public Sans', system-ui, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0B0D12; --surface: #14171F; --ink: #F2F3F5; --subtext: #9AA0AC;
+      --border: #262A33; --accent: #5B8CFF; --accent-ink: #0B0D12;
+      --accent-soft: #16233F; --tan: #C9BFA9; --tan-soft: #211D17;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0B0D12; --surface: #14171F; --ink: #F2F3F5; --subtext: #9AA0AC;
+    --border: #262A33; --accent: #5B8CFF; --accent-ink: #0B0D12;
+    --accent-soft: #16233F; --tan: #C9BFA9; --tan-soft: #211D17;
+  }
+  * { box-sizing: border-box; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+  html, body { background: var(--bg); }
+  body {
+    margin: 0; color: var(--ink);
+    font-family: var(--font-body); font-size: 16px; line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    max-width: 760px; margin: 0 auto; padding: 28px 24px 0;
+  }
+  .wordmark {
+    font-family: var(--font-display); font-weight: 800; font-size: 1.05rem;
+    color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: 8px;
+  }
+  .toplinks { display: flex; gap: 20px; font-family: var(--font-display); font-weight: 600; font-size: 0.92rem; }
+  .toplinks a { text-decoration: none; }
+  .toplinks a:hover { text-decoration: underline; }
+  .toplinks .current { color: var(--subtext); pointer-events: none; }
+  main { max-width: 680px; margin: 0 auto; padding: 48px 24px 96px; }
+  .eyebrow {
+    font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--accent); margin: 0 0 10px;
+  }
+  h1 {
+    font-family: var(--font-display); font-weight: 800; font-size: clamp(2rem, 5vw, 2.6rem);
+    line-height: 1.12; margin: 0 0 14px; text-wrap: balance;
+  }
+  .effective {
+    font-family: var(--font-mono); font-size: 0.85rem; color: var(--subtext);
+    margin: 0 0 40px;
+  }
+  .lede { font-size: 1.08rem; color: var(--ink); margin: 0 0 40px; max-width: 62ch; }
+  h2 {
+    font-family: var(--font-display); font-weight: 700; font-size: 1.3rem;
+    margin: 48px 0 14px; padding-top: 20px; border-top: 1px solid var(--border);
+  }
+  section:first-of-type h2 { border-top: none; padding-top: 0; margin-top: 0; }
+  p { max-width: 62ch; margin: 0 0 16px; color: var(--ink); }
+  p.sub { color: var(--subtext); }
+  ul { max-width: 62ch; padding-left: 1.2em; margin: 0 0 16px; }
+  li { margin-bottom: 8px; }
+  strong { font-weight: 600; }
+  .callout {
+    background: var(--accent-soft); border: 1px solid var(--border); border-radius: 14px;
+    padding: 18px 20px; margin: 0 0 20px; max-width: 62ch;
+  }
+  .callout p { margin: 0; }
+  .callout .tag {
+    font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase;
+    letter-spacing: 0.06em; color: var(--accent); display: block; margin-bottom: 6px;
+  }
+  footer {
+    max-width: 680px; margin: 0 auto; padding: 32px 24px 64px; border-top: 1px solid var(--border);
+    font-size: 0.88rem; color: var(--subtext); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+  }
+  footer a { color: var(--subtext); }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="wordmark" href="/">📦 <span>Itemize</span></a>
+  <nav class="toplinks">
+    <a href="/privacy/">Privacy</a>
+    <a href="/terms/" class="current">Terms</a>
+  </nav>
+</header>
+
+<main>
+  <p class="eyebrow">Legal</p>
+  <h1>Terms of Service</h1>
+  <p class="effective">Effective August 23, 2026</p>
+
+  <p class="lede">These terms cover your use of Itemize, the home inventory app. By creating an account or using the app, you agree to them.</p>
+
+  <section>
+    <h2>1. What Itemize is (and isn't)</h2>
+    <p>Itemize is a tool for recording and organizing a personal home inventory — photos, descriptions, values, and locations of the things you own, arranged by floor, room, and place.</p>
+    <div class="callout">
+      <span class="tag">Worth knowing</span>
+      <p>Itemize helps you build documentation. It doesn't guarantee that any insurer will accept it, and it isn't a substitute for a professional appraisal or for advice from your insurance provider or an attorney.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>2. Your account</h2>
+    <p>You're responsible for the accuracy of the information you provide and for keeping your login credentials secure. You must be able to form a binding contract under the laws that apply to you to use Itemize.</p>
+  </section>
+
+  <section>
+    <h2>3. Your content</h2>
+    <p>You own the photos, descriptions, and inventory data you add to Itemize. By adding it, you give us permission to store, process, and display it back to you — solely to provide the app's features. You confirm you have the right to store any photo or content you upload.</p>
+  </section>
+
+  <section>
+    <h2>4. Subscriptions and free trial</h2>
+    <p>Premium is an auto-renewing subscription billed through the Apple App Store or Google Play. New subscribers get a 7-day free trial; unless you cancel before it ends, you'll be charged for the plan you selected.</p>
+    <p>Because Apple and Google handle billing, cancellations are managed there too — through your Apple ID or Google Play account settings, not by contacting us.</p>
+  </section>
+
+  <section>
+    <h2>5. Acceptable use</h2>
+    <ul>
+      <li>Don't use Itemize to store or transmit unlawful content.</li>
+      <li>Don't try to interfere with, disrupt, or gain unauthorized access to the service.</li>
+      <li>Don't reverse-engineer, scrape, or misuse the app outside its intended purpose.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>6. No warranty</h2>
+    <p class="sub">Itemize is provided "as is." We work hard to keep the app reliable and your data safe, but we can't promise the service will be uninterrupted, error-free, or available at all times.</p>
+  </section>
+
+  <section>
+    <h2>7. Limitation of liability</h2>
+    <p class="sub">To the extent permitted by law, Itemize and its team aren't liable for indirect, incidental, or consequential damages arising from your use of the app.</p>
+  </section>
+
+  <section>
+    <h2>8. Termination</h2>
+    <p>You can stop using Itemize and delete your account at any time — see the Privacy Policy for how. We may suspend or terminate accounts that violate these terms.</p>
+  </section>
+
+  <section>
+    <h2>9. Changes to these terms</h2>
+    <p>If these terms change, we'll update the effective date above. Continuing to use Itemize after a change means you accept the update.</p>
+  </section>
+
+  <section>
+    <h2>10. Contact</h2>
+    <p>Questions about these terms? Reach us at <a href="mailto:itemize.co@gmail.com">itemize.co@gmail.com</a>.</p>
+  </section>
+</main>
+
+<footer>
+  <span>© 2026 Itemize</span>
+  <span><a href="/privacy/">Privacy Policy</a></span>
+</footer>
+</body>
+</html>

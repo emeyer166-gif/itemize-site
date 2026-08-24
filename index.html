@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Itemize</title>
+<meta name="description" content="Home inventory app for photographed, organized, insurance-ready records.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FFFFFF;
+    --surface: #F6F7FB;
+    --ink: #15171C;
+    --subtext: #737985;
+    --border: #ECEEF1;
+    --accent: #2563EB;
+    --accent-ink: #FFFFFF;
+    --accent-soft: #EAF1FE;
+    --tan: #A0957D;
+    --tan-soft: #F3EFE8;
+    --grey: #6B7280;
+    --font-display: 'Manrope', system-ui, sans-serif;
+    --font-body: 'Public Sans', system-ui, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0B0D12; --surface: #14171F; --ink: #F2F3F5; --subtext: #9AA0AC;
+      --border: #262A33; --accent: #5B8CFF; --accent-ink: #0B0D12;
+      --accent-soft: #16233F; --tan: #C9BFA9; --tan-soft: #211D17; --grey: #9AA0AC;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0B0D12; --surface: #14171F; --ink: #F2F3F5; --subtext: #9AA0AC;
+    --border: #262A33; --accent: #5B8CFF; --accent-ink: #0B0D12;
+    --accent-soft: #16233F; --tan: #C9BFA9; --tan-soft: #211D17; --grey: #9AA0AC;
+  }
+  * { box-sizing: border-box; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+  html, body { background: var(--bg); }
+  body {
+    margin: 0; color: var(--ink);
+    font-family: var(--font-body); font-size: 16px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    max-width: 900px; margin: 0 auto; padding: 28px 24px 0;
+  }
+  .wordmark {
+    font-family: var(--font-display); font-weight: 800; font-size: 1.05rem;
+    color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: 8px;
+  }
+  .toplinks { display: flex; gap: 20px; font-family: var(--font-display); font-weight: 600; font-size: 0.92rem; }
+  .toplinks a { text-decoration: none; color: var(--ink); }
+  .toplinks a:hover { color: var(--accent); }
+
+  main { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+
+  .hero { padding: 72px 0 56px; max-width: 640px; }
+  .eyebrow {
+    font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--accent); margin: 0 0 16px;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .eyebrow::before { content: ''; width: 20px; height: 1px; background: var(--accent); display: inline-block; }
+  h1 {
+    font-family: var(--font-display); font-weight: 800; font-size: clamp(2.3rem, 5.4vw, 3.2rem);
+    line-height: 1.08; margin: 0 0 20px; text-wrap: balance; letter-spacing: -0.01em;
+  }
+  h1 em { font-style: normal; color: var(--accent); }
+  .sub { font-size: 1.15rem; color: var(--subtext); margin: 0 0 28px; max-width: 52ch; }
+
+  .hierarchy {
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+    font-family: var(--font-mono); font-size: 0.82rem; color: var(--subtext);
+  }
+  .hierarchy .node {
+    background: var(--surface); border: 1px solid var(--border); border-radius: 8px;
+    padding: 5px 11px; color: var(--ink);
+  }
+  .hierarchy .arrow { color: var(--tan); }
+
+  .features {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+    padding: 8px 0 64px;
+  }
+  @media (max-width: 720px) { .features { grid-template-columns: 1fr; } }
+  .feature {
+    border: 1px solid var(--border); border-radius: 16px; padding: 26px 24px;
+    background: var(--surface);
+  }
+  .feature .swatch {
+    width: 34px; height: 34px; border-radius: 10px; margin-bottom: 18px;
+  }
+  .swatch.blue { background: repeating-linear-gradient(135deg, var(--accent) 0 6px, rgba(255,255,255,.32) 6px 8px); }
+  .swatch.grey { background: repeating-linear-gradient(135deg, var(--grey) 0 6px, rgba(255,255,255,.32) 6px 8px); }
+  .swatch.tan  { background: repeating-linear-gradient(135deg, var(--tan) 0 6px, rgba(255,255,255,.32) 6px 8px); }
+  .feature h3 {
+    font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; margin: 0 0 8px;
+  }
+  .feature p { margin: 0; color: var(--subtext); font-size: 0.95rem; }
+
+  .why {
+    border-top: 1px solid var(--border); padding: 56px 0; display: grid;
+    grid-template-columns: 200px 1fr; gap: 32px;
+  }
+  @media (max-width: 640px) { .why { grid-template-columns: 1fr; gap: 16px; } }
+  .why .label {
+    font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--accent);
+  }
+  .why p { max-width: 58ch; font-size: 1.05rem; margin: 0; }
+  .why p + p { margin-top: 16px; color: var(--subtext); font-size: 0.98rem; }
+
+  footer {
+    border-top: 1px solid var(--border); padding: 32px 24px 64px;
+    max-width: 900px; margin: 0 auto;
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    font-size: 0.88rem; color: var(--subtext);
+  }
+  footer .flinks { display: flex; gap: 18px; }
+  footer a { color: var(--subtext); }
+  footer a:hover { color: var(--accent); }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="wordmark" href="/">📦 <span>Itemize</span></a>
+  <nav class="toplinks">
+    <a href="/privacy/">Privacy</a>
+    <a href="/terms/">Terms</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <p class="eyebrow">Home inventory, done properly</p>
+    <h1>Every room, <em>itemized</em> — before you ever need it to be.</h1>
+    <p class="sub">Itemize turns a walk through your home into photographed, organized, insurance-ready records — arranged the way your house actually is.</p>
+    <div class="hierarchy">
+      <span class="node">Floor</span><span class="arrow">→</span>
+      <span class="node">Room</span><span class="arrow">→</span>
+      <span class="node">Place</span><span class="arrow">→</span>
+      <span class="node">Item</span>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="feature">
+      <div class="swatch blue"></div>
+      <h3>Organize like your house</h3>
+      <p>Floors, rooms, and places mirror your actual home, so nothing gets lost in one giant list.</p>
+    </div>
+    <div class="feature">
+      <div class="swatch grey"></div>
+      <h3>Photograph everything</h3>
+      <p>Snap a photo and Itemize can auto-fill the title, category, and estimated value for you.</p>
+    </div>
+    <div class="feature">
+      <div class="swatch tan"></div>
+      <h3>Insurance-ready reports</h3>
+      <p>Export a documented, itemized report of everything you own, room by room, the moment a claim asks for it.</p>
+    </div>
+  </section>
+
+  <section class="why">
+    <span class="label">Why it exists</span>
+    <div>
+      <p>Most home inventories get made once — the week after something goes wrong.</p>
+      <p>Itemize is built so yours is already done: a running record of what you own, what it's worth, and where it lives, kept current in the background of ordinary life instead of assembled from memory during a claim.</p>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <span>© 2026 Itemize</span>
+  <div class="flinks">
+    <a href="/privacy/">Privacy Policy</a>
+    <a href="/terms/">Terms of Service</a>
+    <a href="mailto:itemize.co@gmail.com">itemize.co@gmail.com</a>
+  </div>
+</footer>
+</body>
+</html>

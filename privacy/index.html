@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Itemize Privacy Policy</title>
+<meta name="description" content="The privacy policy for Itemize, the home inventory app.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FFFFFF;
+    --surface: #F6F7FB;
+    --ink: #15171C;
+    --subtext: #737985;
+    --border: #ECEEF1;
+    --accent: #2563EB;
+    --accent-ink: #FFFFFF;
+    --accent-soft: #EAF1FE;
+    --tan: #A0957D;
+    --tan-soft: #F3EFE8;
+    --grey: #6B7280;
+    --font-display: 'Manrope', system-ui, sans-serif;
+    --font-body: 'Public Sans', system-ui, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0B0D12; --surface: #14171F; --ink: #F2F3F5; --subtext: #9AA0AC;
+      --border: #262A33; --accent: #5B8CFF; --accent-ink: #0B0D12;
+      --accent-soft: #16233F; --tan: #C9BFA9; --tan-soft: #211D17; --grey: #9AA0AC;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #0B0D12; --surface: #14171F; --ink: #F2F3F5; --subtext: #9AA0AC;
+    --border: #262A33; --accent: #5B8CFF; --accent-ink: #0B0D12;
+    --accent-soft: #16233F; --tan: #C9BFA9; --tan-soft: #211D17; --grey: #9AA0AC;
+  }
+  * { box-sizing: border-box; }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+  html, body { background: var(--bg); }
+  body {
+    margin: 0; color: var(--ink);
+    font-family: var(--font-body); font-size: 16px; line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); }
+  a:focus-visible, button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .topbar {
+    display: flex; align-items: center; justify-content: space-between;
+    max-width: 760px; margin: 0 auto; padding: 28px 24px 0;
+  }
+  .wordmark {
+    font-family: var(--font-display); font-weight: 800; font-size: 1.05rem;
+    color: var(--ink); text-decoration: none; display: flex; align-items: center; gap: 8px;
+  }
+  .toplinks { display: flex; gap: 20px; font-family: var(--font-display); font-weight: 600; font-size: 0.92rem; }
+  .toplinks a { text-decoration: none; }
+  .toplinks a:hover { text-decoration: underline; }
+  .toplinks .current { color: var(--subtext); pointer-events: none; }
+  main { max-width: 680px; margin: 0 auto; padding: 48px 24px 96px; }
+  .eyebrow {
+    font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--accent); margin: 0 0 10px;
+  }
+  h1 {
+    font-family: var(--font-display); font-weight: 800; font-size: clamp(2rem, 5vw, 2.6rem);
+    line-height: 1.12; margin: 0 0 14px; text-wrap: balance;
+  }
+  .effective {
+    font-family: var(--font-mono); font-size: 0.85rem; color: var(--subtext);
+    margin: 0 0 40px;
+  }
+  .lede { font-size: 1.08rem; color: var(--ink); margin: 0 0 40px; max-width: 62ch; }
+  h2 {
+    font-family: var(--font-display); font-weight: 700; font-size: 1.3rem;
+    margin: 48px 0 14px; padding-top: 20px; border-top: 1px solid var(--border);
+  }
+  section:first-of-type h2 { border-top: none; padding-top: 0; margin-top: 0; }
+  p { max-width: 62ch; margin: 0 0 16px; color: var(--ink); }
+  p.sub { color: var(--subtext); }
+  ul { max-width: 62ch; padding-left: 1.2em; margin: 0 0 16px; }
+  li { margin-bottom: 8px; }
+  strong { font-weight: 600; }
+
+  .inventory { list-style: none; margin: 0 0 12px; padding: 0; border-top: 1px solid var(--border); }
+  .inventory li {
+    display: flex; gap: 16px; align-items: flex-start;
+    padding: 18px 0; border-bottom: 1px solid var(--border); margin: 0;
+  }
+  .swatch {
+    flex: none; width: 30px; height: 30px; border-radius: 9px; margin-top: 2px;
+  }
+  .swatch.blue { background: repeating-linear-gradient(135deg, var(--accent) 0 6px, rgba(255,255,255,.32) 6px 8px); }
+  .swatch.grey { background: repeating-linear-gradient(135deg, var(--grey) 0 6px, rgba(255,255,255,.32) 6px 8px); }
+  .swatch.tan  { background: repeating-linear-gradient(135deg, var(--tan) 0 6px, rgba(255,255,255,.32) 6px 8px); }
+  .inv-body { flex: 1; }
+  .inv-label {
+    font-family: var(--font-display); font-weight: 700; font-size: 0.98rem; margin: 0 0 4px;
+    display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  }
+  .inv-tag {
+    font-family: var(--font-mono); font-size: 0.68rem; text-transform: uppercase; letter-spacing: 0.05em;
+    color: var(--accent); background: var(--accent-soft); border-radius: 6px; padding: 3px 7px;
+  }
+  .inv-tag.optional { color: var(--tan); background: var(--tan-soft); }
+  .inv-desc { color: var(--subtext); font-size: 0.95rem; margin: 0; max-width: 54ch; }
+
+  .callout {
+    background: var(--accent-soft); border: 1px solid var(--border); border-radius: 14px;
+    padding: 18px 20px; margin: 0 0 20px; max-width: 62ch;
+  }
+  .callout p { margin: 0; }
+  .callout .tag {
+    font-family: var(--font-mono); font-size: 0.72rem; text-transform: uppercase;
+    letter-spacing: 0.06em; color: var(--accent); display: block; margin-bottom: 6px;
+  }
+  footer {
+    max-width: 680px; margin: 0 auto; padding: 32px 24px 64px; border-top: 1px solid var(--border);
+    font-size: 0.88rem; color: var(--subtext); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px;
+  }
+  footer a { color: var(--subtext); }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="wordmark" href="/">📦 <span>Itemize</span></a>
+  <nav class="toplinks">
+    <a href="/privacy/" class="current">Privacy</a>
+    <a href="/terms/">Terms</a>
+  </nav>
+</header>
+
+<main>
+  <p class="eyebrow">Legal</p>
+  <h1>Privacy Policy</h1>
+  <p class="effective">Effective August 23, 2026</p>
+
+  <p class="lede">Itemize exists to document what you own — so this policy is written the same way: plainly, and itemized. Here's exactly what we collect, why, and who (if anyone) sees it.</p>
+
+  <section>
+    <h2>Information we collect</h2>
+    <ul class="inventory">
+      <li>
+        <span class="swatch blue"></span>
+        <div class="inv-body">
+          <p class="inv-label">Account information <span class="inv-tag">Required</span></p>
+          <p class="inv-desc">Your email address and password, or — if you sign in with Apple or Google — the name and email they share with us.</p>
+        </div>
+      </li>
+      <li>
+        <span class="swatch grey"></span>
+        <div class="inv-body">
+          <p class="inv-label">Your inventory content <span class="inv-tag">Required</span></p>
+          <p class="inv-desc">Item photos, names, descriptions, categories, values, notes, and the floors, rooms, and places you organize them into.</p>
+        </div>
+      </li>
+      <li>
+        <span class="swatch tan"></span>
+        <div class="inv-body">
+          <p class="inv-label">Location <span class="inv-tag optional">Optional</span></p>
+          <p class="inv-desc">If you grant permission, used only to timestamp and geotag photos you take in the app — it makes your inventory more credible for insurance purposes. Deny or revoke it anytime in your device settings.</p>
+        </div>
+      </li>
+      <li>
+        <span class="swatch blue"></span>
+        <div class="inv-body">
+          <p class="inv-label">Photos sent for AI Scan <span class="inv-tag optional">Optional, Premium</span></p>
+          <p class="inv-desc">When you tap AI Scan on a photo, it's sent to OpenAI's API to suggest a title, description, category, and value. This only happens when you choose it — never automatically.</p>
+        </div>
+      </li>
+      <li>
+        <span class="swatch grey"></span>
+        <div class="inv-body">
+          <p class="inv-label">Subscription status <span class="inv-tag">Required for Premium</span></p>
+          <p class="inv-desc">Your plan and subscription status, managed through Apple's App Store or Google Play and our subscription provider, RevenueCat. We never see or store your card details.</p>
+        </div>
+      </li>
+      <li>
+        <span class="swatch tan"></span>
+        <div class="inv-body">
+          <p class="inv-label">Device &amp; app data <span class="inv-tag">Required</span></p>
+          <p class="inv-desc">Basic technical information, like device type and app version, needed to keep the app running and to deliver optional reminder notifications.</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>How we use it</h2>
+    <p>To run the inventory service itself: syncing your rooms and items across your devices, generating the reports you export, giving you support when you ask for it, and — only when you use AI Scan — auto-filling item details from a photo.</p>
+  </section>
+
+  <section>
+    <h2>Who we share it with</h2>
+    <p>We don't sell your data, and we don't use your photos or inventory to serve ads. A small number of providers process data strictly to help us run the app:</p>
+    <ul>
+      <li><strong>Supabase</strong> — hosts our database and stores your photos.</li>
+      <li><strong>RevenueCat</strong> — manages subscription status across Apple and Google.</li>
+      <li><strong>OpenAI</strong> — processes a photo only when you use AI Scan.</li>
+      <li><strong>Apple / Google</strong> — handle sign-in and, for Premium, payment processing.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Storage &amp; security</h2>
+    <p>Your data lives in Supabase's database and storage, access-restricted to your account. Passwords and sign-in tokens are handled by Supabase Auth, Apple, or Google directly — we never store them in plain text.</p>
+  </section>
+
+  <section>
+    <h2>Your choices</h2>
+    <div class="callout">
+      <span class="tag">Deleting your data</span>
+      <p>You can edit or delete any item, room, or photo inside the app at any time. To delete your account and everything tied to it, email <a href="mailto:itemize.co@gmail.com">itemize.co@gmail.com</a> and we'll take care of it.</p>
+    </div>
+    <p class="sub">You can also revoke location or notification permissions anytime in your device's settings.</p>
+  </section>
+
+  <section>
+    <h2>Children's privacy</h2>
+    <p class="sub">Itemize isn't directed at children under 13, and we don't knowingly collect information from them.</p>
+  </section>
+
+  <section>
+    <h2>Changes to this policy</h2>
+    <p class="sub">If this policy changes, we'll update the effective date above. Continuing to use Itemize after a change means you accept the update.</p>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>Questions about this policy? Reach us at <a href="mailto:itemize.co@gmail.com">itemize.co@gmail.com</a>.</p>
+  </section>
+</main>
+
+<footer>
+  <span>© 2026 Itemize</span>
+  <span><a href="/terms/">Terms of Service</a></span>
+</footer>
+</body>
+</html>
