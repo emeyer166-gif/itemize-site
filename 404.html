@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Itemize</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" media="(prefers-color-scheme: light)">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32-dark.png" media="(prefers-color-scheme: dark)">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16-dark.png" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Public+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FFFFFF; --surface: #F6F7FB; --ink: #15171C; --subtext: #737985;
+    --border: #ECEEF1; --accent: #2563EB; --accent-ink: #FFFFFF; --accent-soft: #EAF1FE;
+    --font-display: 'Manrope', system-ui, sans-serif;
+    --font-body: 'Public Sans', system-ui, sans-serif;
+    --font-mono: 'IBM Plex Mono', ui-monospace, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #0B0D12; --surface: #14171F; --ink: #F2F3F5; --subtext: #9AA0AC;
+      --border: #262A33; --accent: #5B8CFF; --accent-ink: #0B0D12; --accent-soft: #16233F;
+    }
+  }
+  * { box-sizing: border-box; }
+  html, body { background: var(--bg); }
+  body {
+    margin: 0; color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh; display: flex; flex-direction: column;
+  }
+  a { color: var(--accent); }
+
+  .topbar { display: flex; align-items: center; max-width: 640px; margin: 0 auto; width: 100%; padding: 28px 24px 0; }
+  .wordmark { font-family: var(--font-display); font-weight: 800; font-size: 1.05rem; color: var(--ink); text-decoration: none; }
+
+  main { max-width: 640px; margin: 0 auto; width: 100%; padding: 56px 24px; flex: 1; }
+  .eyebrow {
+    font-family: var(--font-mono); font-size: 0.78rem; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--accent); margin: 0 0 16px; display: flex; align-items: center; gap: 10px;
+  }
+  .eyebrow::before { content: ''; width: 20px; height: 1px; background: var(--accent); display: inline-block; }
+  h1 {
+    font-family: var(--font-display); font-weight: 800; font-size: clamp(1.9rem, 5.4vw, 2.5rem);
+    line-height: 1.12; margin: 0 0 16px; text-wrap: balance; letter-spacing: -0.01em;
+  }
+  .sub { font-size: 1.05rem; color: var(--subtext); margin: 0 0 32px; max-width: 48ch; }
+
+  .stores { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
+  .store-btn {
+    display: inline-flex; align-items: center; gap: 8px; text-decoration: none;
+    background: var(--ink); color: var(--bg); font-family: var(--font-display); font-weight: 700;
+    font-size: 0.95rem; padding: 13px 20px; border-radius: 12px;
+  }
+  .store-btn:hover { opacity: 0.88; }
+
+  .open-app {
+    display: inline-flex; align-items: center; justify-content: center; text-decoration: none;
+    background: var(--accent-soft); color: var(--accent); font-family: var(--font-display); font-weight: 700;
+    font-size: 0.92rem; padding: 12px 18px; border-radius: 12px; border: none; cursor: pointer; width: 100%;
+  }
+
+  footer {
+    border-top: 1px solid var(--border); padding: 24px; max-width: 640px; margin: 0 auto; width: 100%;
+    font-size: 0.85rem; color: var(--subtext);
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <a class="wordmark" href="/"><span>Itemize</span></a>
+</header>
+
+<main>
+  <p class="eyebrow">Shared with you</p>
+  <h1>Get Itemize to view what was shared</h1>
+  <p class="sub">Someone shared part of their home inventory with you. Install Itemize to see it — your link stays ready once you sign in.</p>
+
+  <div class="stores">
+    <a class="store-btn" href="https://apps.apple.com/app/id6805620946">Download for iPhone</a>
+    <a class="store-btn" href="https://play.google.com/store/apps/details?id=com.itemize.app">Download for Android</a>
+  </div>
+
+  <button class="open-app" id="open-app-btn" style="display:none">Already have the app? Open it</button>
+</main>
+
+<footer>
+  <span>© 2026 Itemize</span>
+</footer>
+
+<script>
+  // GitHub Pages serves this file for any unmatched path (including /share),
+  // while preserving the real URL — so a token in the query string is still
+  // readable here even though there's no server-side router.
+  var params = new URLSearchParams(location.search);
+  var token = params.get('t');
+  if (token) {
+    var btn = document.getElementById('open-app-btn');
+    btn.style.display = 'block';
+    btn.addEventListener('click', function () {
+      location.href = 'things://share/' + encodeURIComponent(token);
+    });
+  }
+</script>
+</body>
+</html>
